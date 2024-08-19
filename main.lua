@@ -7,4 +7,9 @@ for key, name in pairs(peripheral.getNames()) do
   end
 end
 
-print(inventories)
+
+for key, inv in pairs(inventories) do
+  for slot, item in pairs(inv.list()) do
+    print(("%d x %s in slot %d"):format(item.count, item.name, slot))
+  end
+end
