@@ -7,4 +7,4 @@ for key, name in pairs(peripheral.getNames()) do
   end
 end
 
-print(textutils.serialiseJSON(inventories))
+print(inventories)
