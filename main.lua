@@ -11,8 +11,10 @@ local handle = fs.open("./items.json", "w")
 for key, inv in pairs(inventories) do
   for i = 1, inv.size() do
     local item = inv.getItemDetail(i)
-    print(textutils.serialiseJSON(item))
-    handle.write(textutils.serialiseJSON({ count = item.count, displayName = item.displayName, slot = slot }))
+    if item then
+      print(textutils.serialiseJSON(item))
+      handle.write(textutils.serialiseJSON({ count = item.count, displayName = item.displayName, slot = slot }))
+    end
   end
 end
 handle.close()
