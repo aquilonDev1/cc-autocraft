@@ -14,3 +14,4 @@ for key, inv in pairs(inventories) do
     handle.write(textutils.serialiseJSON({ count = item.count, displayName = item.display_name, slot = slot }))
   end
 end
+handle.close()
