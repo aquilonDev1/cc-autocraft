@@ -10,7 +10,7 @@ end
 local handle = fs.open("./items.json", "w")
 for key, inv in pairs(inventories) do
   for slot, item in pairs(inv.list()) do
-    print(("%d x %s in slot %d"):format(item.count, item.name, slot))
+    print(item)
     handle.write(textutils.serialiseJSON({ count = item.count, displayName = item.displayName, slot = slot }))
   end
 end
